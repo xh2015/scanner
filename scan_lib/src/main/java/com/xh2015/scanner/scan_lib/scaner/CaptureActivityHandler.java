@@ -1,11 +1,11 @@
-package com.vondear.rxtools.module.scaner;
+package com.xh2015.scanner.scan_lib.scaner;
 
 import android.os.Handler;
 import android.os.Message;
 
 import com.google.zxing.Result;
-import com.vondear.rxtools.R;
-import com.vondear.rxtools.activity.ActivityScanerCode;
+import com.xh2015.scanner.scan_lib.R;
+import com.xh2015.scanner.scan_lib.activity.ScannerCodeActivity;
 
 
 /**
@@ -15,10 +15,10 @@ import com.vondear.rxtools.activity.ActivityScanerCode;
 public final class CaptureActivityHandler extends Handler {
 
     DecodeThread decodeThread = null;
-    ActivityScanerCode activity = null;
+    ScannerCodeActivity activity = null;
     private State state;
 
-    public CaptureActivityHandler(ActivityScanerCode activity) {
+    public CaptureActivityHandler(ScannerCodeActivity activity) {
         this.activity = activity;
         decodeThread = new DecodeThread(activity);
         decodeThread.start();

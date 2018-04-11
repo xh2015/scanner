@@ -1,4 +1,4 @@
-package com.vondear.rxtools.module.scaner;
+package com.xh2015.scanner.scan_lib.scaner;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,8 +13,8 @@ import com.google.zxing.MultiFormatReader;
 import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
-import com.vondear.rxtools.R;
-import com.vondear.rxtools.activity.ActivityScanerCode;
+import com.xh2015.scanner.scan_lib.R;
+import com.xh2015.scanner.scan_lib.activity.ScannerCodeActivity;
 
 import java.util.Hashtable;
 import java.util.Vector;
@@ -24,14 +24,14 @@ import static android.content.ContentValues.TAG;
 
 /**
  * @author Vondear
- * 描述: 接受消息后解码
+ *         描述: 接受消息后解码
  */
 final class DecodeHandler extends Handler {
 
     private final MultiFormatReader multiFormatReader;
-    ActivityScanerCode activity = null;
+    ScannerCodeActivity activity = null;
 
-    DecodeHandler(ActivityScanerCode activity) {
+    DecodeHandler(ScannerCodeActivity activity) {
         multiFormatReader = new MultiFormatReader();
 
         // 解码的参数
@@ -152,8 +152,10 @@ final class DecodeHandler extends Handler {
             //Log.d(TAG, "Sending decode succeeded message...");
             message.sendToTarget();
         } else {
-            Message message = Message.obtain(activity.getHandler(), R.id.decode_failed);
-            message.sendToTarget();
+            if (activity != null && !activity.isFinishing()) {
+                Message message = Message.obtain(activity.getHandler(), R.id.decode_failed);
+                message.sendToTarget();
+            }
         }
     }
 

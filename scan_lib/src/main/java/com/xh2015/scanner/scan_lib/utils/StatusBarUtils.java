@@ -11,7 +11,7 @@ import android.view.WindowManager;
  * description:
  * Date: 2018/4/11 上午11:31
  */
-public class StatusBasrUtils {
+public class StatusBarUtils {
 
     /**
      * 隐藏Title

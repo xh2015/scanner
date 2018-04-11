@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.vondear.rxtools.module.scaner.decoding;
+package com.xh2015.scanner.scan_lib.scaner.decoding;
 
 import android.app.Activity;
 

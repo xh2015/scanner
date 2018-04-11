@@ -1,4 +1,4 @@
-package com.vondear.rxtools.module.scaner;
+package com.xh2015.scanner.scan_lib.scaner;
 
 import android.content.Context;
 import android.graphics.Point;

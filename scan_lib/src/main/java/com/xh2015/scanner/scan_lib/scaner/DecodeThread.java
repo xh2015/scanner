@@ -1,9 +1,9 @@
-package com.vondear.rxtools.module.scaner;
+package com.xh2015.scanner.scan_lib.scaner;
 
 import android.os.Handler;
 import android.os.Looper;
 
-import com.vondear.rxtools.activity.ActivityScanerCode;
+import com.xh2015.scanner.scan_lib.activity.ScannerCodeActivity;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -14,10 +14,10 @@ import java.util.concurrent.CountDownLatch;
 final class DecodeThread extends Thread {
 
     private final CountDownLatch handlerInitLatch;
-    ActivityScanerCode activity;
+	ScannerCodeActivity activity;
     private Handler handler;
 
-	DecodeThread(ActivityScanerCode activity) {
+	DecodeThread(ScannerCodeActivity activity) {
 		this.activity = activity;
 		handlerInitLatch = new CountDownLatch(1);
 	}
